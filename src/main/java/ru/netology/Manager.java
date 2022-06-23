@@ -16,7 +16,7 @@ public class Manager {
         for (Ticket ticket : repo.findAll()) {
             if (ticket.getFrom() == from && ticket.getTo() == to) {
                 Ticket[] tmp = new Ticket[ans.length + 1];
-                for (int i = 0; i < tickets.length; i++) {
+                for (int i = 0; i < ans.length; i++) {
                     tmp[i] = ans[i];
                 }
                 tmp[tmp.length - 1] = ticket;

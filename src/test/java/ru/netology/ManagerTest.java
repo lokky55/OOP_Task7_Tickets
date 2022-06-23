@@ -10,7 +10,7 @@ public class ManagerTest {
 
     private Ticket ticket1 = new Ticket(1, 2500, "DME", "NBC", 120);
     private Ticket ticket2 = new Ticket(2, 1700, "VKO", "KLG", 50);
-    private Ticket ticket3 = new Ticket(3, 7000, "SVO", "KLG", 300);
+    private Ticket ticket3 = new Ticket(3, 7000, "SVO", "SEN", 300);
     private Ticket ticket4 = new Ticket(4, 1500, "VKO", "KLG", 45);
     private Ticket ticket5 = new Ticket(5, 2300, "NBC", "VKO", 140);
     private Ticket ticket6 = new Ticket(6, 8000, "SEN", "DME", 260);
@@ -43,14 +43,21 @@ public class ManagerTest {
 
     @Test
     public void shouldFindByFromAndTo() {
-        Ticket[] actual = manager.findAllByFromTo("DME", "NBC");
-        Ticket[] expected = {ticket1};
+        Ticket[] actual = manager.findAllByFromTo("SVO", "SEN");
+        Ticket[] expected = {ticket3};
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindNoByFromAndToWithIncorrectInput() {
+    public void shouldFindNoAnyIfFirstIncorrect() {
         Ticket[] actual = manager.findAllByFromTo("O", "KLG");
+        Ticket[] expected = {};
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindNoAnyIfSecondIncorrect () {
+        Ticket[] actual = manager.findAllByFromTo("SVO","G");
         Ticket[] expected = {};
         Assertions.assertArrayEquals(expected, actual);
     }

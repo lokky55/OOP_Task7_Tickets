@@ -67,7 +67,7 @@
                                     <element>CLASS</element>
                                     <!--CLASS if no Package, PACKAGE-->
                                     <excludes>
-                                        <exclude>ru.netology.Product</exclude>
+                                        <exclude>ru.netology.Ticket</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>

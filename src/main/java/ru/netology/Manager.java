@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 public class Manager {
     private Repository repo;
-    private Ticket[] tickets = new Ticket[0];
 
     public Manager(Repository repo) {
         this.repo = repo;

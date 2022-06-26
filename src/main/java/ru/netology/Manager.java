@@ -13,7 +13,8 @@ public class Manager {
     public Ticket[] findAllByFromTo(String from, String to) {
         Ticket[] ans = new Ticket[0];
         for (Ticket ticket : repo.findAll()) {
-            if (ticket.getFrom() == from && ticket.getTo() == to) {
+//            if (ticket.getFrom() == from && ticket.getTo() == to) {    // сравнение строк должно быть через equals
+            if (ticket.getFrom().equals(from) && ticket.getTo().equals(to)) {
                 Ticket[] tmp = new Ticket[ans.length + 1];
                 for (int i = 0; i < ans.length; i++) {
                     tmp[i] = ans[i];
